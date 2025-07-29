@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PDFViewActivity">
+
+    <TextView
+        android:id="@+id/zoomLevelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="#80000000"
+        android:padding="8dp"
+        android:textColor="#FFFFFF"
+        android:visibility="gone"/>
+
+    <com.ahmed.pdfx.pdfreadx.views.ZoomableImageView
+        android:id="@+id/pdfPageImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        tools:ignore="ContentDescription"
+        />
+    <!-- Navigation controls at bottom -->
+    <!-- android:layout_above="@+id/navControls" -->
+
+    <LinearLayout
+            android:id="@+id/navControls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#CCFFFFFF"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <ImageButton
+                android:id="@+id/btnPrevious"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/outline_arrow_back_ios_24"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/pageInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/nav_pad"
+                android:paddingEnd="@dimen/nav_pad"
+                android:text="@string/page_num" />
+
+            <ImageButton
+                android:id="@+id/btnNext"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/outline_arrow_forward_ios_24"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+</RelativeLayout>
